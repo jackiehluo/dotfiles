@@ -103,5 +103,8 @@ export PS2;
 export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH="/usr/local/heroku/bin:$PATH"
 
+alias c='clear'
+alias back='cd -'
 alias edit='subl'
 alias f='open -a Finder ./'
+alias http='python -m SimpleHTTPServer 8000'

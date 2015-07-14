@@ -18,13 +18,12 @@ set nobackup
 set nowb
 
 execute pathogen#infect()
+au VimEnter *  NERDTree
 
 set background=dark
 let g:solarized_visibility="low"
 syntax enable
 colorscheme solarized
-
- au VimEnter *  NERDTree
 
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
@@ -33,9 +32,9 @@ if exists("&undodir")
 endif
 
 if has('persistent_undo')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
+    silent !mkdir ~/.vim/backups > /dev/null 2>&1
+    set undodir=~/.vim/backups
+    set undofile
 endif
 
 set autoindent
