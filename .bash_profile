@@ -7,37 +7,26 @@ fi;
 prompt_git() {
     local s='';
     local branchName='';
-
     if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
-
         if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
-
             git update-index --really-refresh -q &>/dev/null;
-
             if ! $(git diff --quiet --ignore-submodules --cached); then
                 s+='+';
             fi;
-
             if ! $(git diff-files --quiet --ignore-submodules --); then
                 s+='!';
             fi;
-
             if [ -n "$(git ls-files --others --exclude-standard)" ]; then
                 s+='?';
             fi;
-
             if $(git rev-parse --verify refs/stash &>/dev/null); then
                 s+='$';
             fi;
-
         fi;
-
         branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
             git rev-parse --short HEAD 2> /dev/null || \
             echo '(unknown)')";
-
         [ -n "${s}" ] && s=" [${s}]";
-
         echo -e "${1}${branchName}${blue}${s}";
     else
         return;
@@ -104,6 +93,7 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 alias c='clear'
+alias redo='sudo !!'
 alias back='cd -'
 alias edit='subl'
 alias f='open -a Finder ./'
