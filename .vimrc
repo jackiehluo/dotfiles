@@ -18,7 +18,20 @@ set nobackup
 set nowb
 
 execute pathogen#infect()
-au VimEnter *  NERDTree
+
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 
 set background=dark
 let g:solarized_visibility="low"
