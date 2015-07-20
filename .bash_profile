@@ -93,7 +93,7 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 alias c='clear'
-alias redo='sudo !!'
+alias please='sudo $(history -p !!)'
 alias back='cd -'
 alias edit='subl'
 alias f='open -a Finder ./'
