@@ -32,6 +32,7 @@ endfunction
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+let NERDTreeIgnore = ['\.pyc$']
 
 set background=dark
 let g:solarized_visibility="low"
