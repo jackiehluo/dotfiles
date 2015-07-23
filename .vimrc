@@ -34,10 +34,15 @@ autocmd VimEnter * wincmd p
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 let NERDTreeIgnore = ['\.pyc$']
 
-set background=dark
-let g:solarized_visibility="low"
 syntax enable
-colorscheme solarized
+set background=dark
+colorscheme material
+
+" A function that allows you to see the names of syntax groups under your cursor
+"function! SyntaxItem()
+"  return synIDattr(synID(line("."),col("."),1),"name")
+"endfunction
+"set statusline+=%{SyntaxItem()}
 
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
