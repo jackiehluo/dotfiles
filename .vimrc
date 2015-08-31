@@ -102,3 +102,4 @@ set modeline
 set modelines=5
 
 command C %w !pbcopy
+command D :1,$d
