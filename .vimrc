@@ -29,7 +29,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
 let NERDTreeIgnore = ['\.pyc$']
@@ -115,3 +114,5 @@ set modelines=5
 
 command C %w !pbcopy
 command D :1,$d
+command V :vert belowright sb
+
