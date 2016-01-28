@@ -93,6 +93,12 @@ if has('persistent_undo')
     set undofile
 endif
 
+nnoremap <D-F> *<S-n>ye:Ag <C-r>"<CR>
+command! -nargs=1 Gri Grep -ErinI --exclude-dir=log --exclude-dir=tmp --exclude-dir=coverage --exclude-dir=.git <args> .
+command! -nargs=1 Gr Grep -ErnI --exclude-dir=log --exclude-dir=tmp --exclude-dir=coverage --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=saved_state --exclude-dir=Electron.app <args> .
+command! -nargs=1 Grc Grep -ErinI --include=\*.coffee --exclude-dir=log --exclude-dir=tmp --exclude-dir=coverage --exclude-dir=.git <args> .
+command! -nargs=1 Grr Grep -ErinI --include=\*.rb --exclude-dir=log --exclude-dir=tmp --exclude-dir=coverage --exclude-dir=.git <args> .
+
 set autoindent
 set smartindent
 set smarttab
