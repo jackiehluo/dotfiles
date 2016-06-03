@@ -98,6 +98,7 @@ alias back='cd -'
 alias edit='subl'
 alias f='open -a Finder ./'
 alias http='python -m SimpleHTTPServer 8000'
+alias n1='./N1.sh --dev --enable-logging'
 
 alias gpull='git pull origin master'
 alias gpush='git push origin master'
