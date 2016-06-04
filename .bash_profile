@@ -100,7 +100,7 @@ alias f='open -a Finder ./'
 alias http='python -m SimpleHTTPServer 8000'
 alias n1='./N1.sh --dev --enable-logging'
 
-alias gpull='git pull origin master'
+alias gpull='git pull origin master --rebase'
 alias gpush='git push origin master'
 alias gs='git status'
 alias gd='git diff'
